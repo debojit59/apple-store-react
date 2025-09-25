@@ -6,7 +6,6 @@ import Home from "./components/Home";
 import Iphone from "./components/IphonePage";
 import Macbook from "./components/Macbook";
 import Watch from "./components/Watch";
-import { watchModels } from "./Data";
 import Imac from "./components/Imac";
 import Transition from "./components/Transition";
 
@@ -28,13 +27,13 @@ export default function App() {
 
   return (
     <>
-      <div className="w-full h-screen grid place-items-center">
+      {/* safer than h-screen in production */}
+      <div className="w-full min-h-screen grid place-items-center bg-white">
         <div
-          className={` ${
-            frameZoom && `min-w-[97vw] min-h-[97vh]`
-          }w-[70vw] h-[85vh] min-w-[70vw] min-h-[85vh] max-w-[90vw] max-h-[90vh]
-        border border-gray-300 resize rounded-2xl overflow-auto relative transition-all 
-           duration-100 flex`}
+          className={`${
+            frameZoom ? "min-w-[97vw] min-h-[97vh]" : ""
+          } w-[70vw] h-[85vh] min-w-[70vw] min-h-[85vh] max-w-[90vw] max-h-[90vh] max-w-screen-2xl
+          border border-gray-300 resize rounded-2xl overflow-auto relative transition-all duration-100 flex`}
         >
           <Navbar HandleFolderIcon={HandleFolder} Open={Open} />
           <Control
@@ -44,7 +43,8 @@ export default function App() {
             HandleReset={HandleReset}
           />
 
-          <div className="flex-grow">
+          {/* give content a floor height so children using h-full don't collapse */}
+          <div className="flex-grow min-h-[60vh] overflow-x-hidden">
             <Transition Open={Open}>
               <Home onNavigate={HandleFolder} />
               <Iphone />
