@@ -7,7 +7,7 @@ export default function Iphone() {
       <h3 className="2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8">
         Which iPhone is right for you?
       </h3>
-      <div className="flex justify-between w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center w-full">
         {iphoneModels.map((item, index) => (
           <div
             key={index}
