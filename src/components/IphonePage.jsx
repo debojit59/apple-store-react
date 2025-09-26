@@ -1,42 +1,41 @@
 import React from "react";
-import { iphoneModels } from "../Data/index";
+import { iphoneModels } from "../data/index";
 
-export default function Iphone() {
+const IPhone = () => {
   return (
     <div className="w-full h-full flex flex-col items-center justify-around bg-white p-8">
       <h3 className="2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8">
         Which iPhone is right for you?
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center w-full">
-        {iphoneModels.map((item, index) => (
+      <div className="flex justify-between w-full">
+        {iphoneModels.map((iphone, index) => (
           <div
             key={index}
-            className=" bg-white flex flex-col items-center pt-10 px-3"
+            className={`flex flex-col items-center justify-between gap-y-2 ${
+              index === 2 ? "hidden md:flex" : ""
+            }`}
           >
             <img
-              src={item.img}
-              alt={item.name}
-              className="2xl:w-56 lg:w-48 sm:w-36 md:h-64 sm:h-48"
+              src={iphone.img}
+              alt={iphone.name}
+              className="2xl:w-72 lg:w-64 sm:w-48 md:h-64 sm:h-48 object-contain"
             />
-            <span
-              className="2xl:text-2xl xl:text-xl lg:text-base 
-        sm:text-sm font-semibold mt-6"
+            <a
+              href="#"
+              className="2xl:text-2xl xl:text-xl lg:text-base text-sm font-semobold text-gray-800 mt-4"
             >
-              {item.name}
-            </span>
-            <span
-              className="text-xl lg:text-base 
-        sm:text-sm mt-4"
-            >
-              {item.description}
-            </span>
-            <p
-              className="text-blue-400 mt-4 text-xl lg:text-base 
-        sm:text-sm"
-            >
-              {item.price}
+              {iphone.name}
+            </a>
+            <p className="2xl:text-lg xl:text-base lg:text-sm text-xs text-gray-700 mt-2">
+              {iphone.description}
             </p>
-            <button className=" bg-blue-500 px-8 py-2 rounded-full text-white mt-2">
+            <span className="2xl:text-base xl:text-sm lg:text-xs text-blue-400 mt-2">
+              {iphone.price}
+            </span>
+            <button
+              type="button"
+              className="text-sm mt-4 px-4 py-2 bg-blue-400 text-white rounded-full"
+            >
               Buy
             </button>
           </div>
@@ -44,4 +43,6 @@ export default function Iphone() {
       </div>
     </div>
   );
-}
+};
+
+export default IPhone;
