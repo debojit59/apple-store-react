@@ -1,5 +1,5 @@
 import React from "react";
-import { items } from "../Data/index";
+import { items } from "../data/index";
 
 const Home = ({ onNavigate }) => {
   return (

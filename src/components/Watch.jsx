@@ -1,5 +1,5 @@
 import React from "react";
-import { watchModels } from "../Data/index";
+import { watchModels } from "../data/index";
 
 export default function Watch() {
   return (

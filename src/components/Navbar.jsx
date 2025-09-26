@@ -1,5 +1,5 @@
 import React from "react";
-import { navItems } from "../Data/index";
+import { navItems } from "../data/index";
 
 export default function Navbar({ Open, HandleFolderIcon }) {
   return (
