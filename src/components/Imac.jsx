@@ -14,15 +14,15 @@ export default function Imac() {
     imacModels.find((item) => item.label.toLowerCase() === selectedColor);
 
   return (
-    <div className="h-full grid grid-cols-2 grid-rows-2 md:gap-4 relative bg-white ">
+    <div className="h-full grid grid-cols-2 grid-rows-2 md:gap-4 relative bg-white p-5">
       <div
         className="h-full col-span-1 row-span-2 flex flex-col items-center
-      md:justify-center justify-center pt-8 bg-gray-50"
+      md:justify-center justify-center bg-gray-50"
       >
         <img
           src={getCurrentModel().images.side}
           alt="images"
-          className="2xl:max-w-full
+          className=" h-full 2xl:max-w-full
         xl:max-w-36 max-w-24"
         />
       </div>
