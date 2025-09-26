@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { imacModels } from "../data";
+import { imacModels } from "../Data";
 
 export default function Imac() {
   const [selectedColor, SetSelectedColor] = useState("green");

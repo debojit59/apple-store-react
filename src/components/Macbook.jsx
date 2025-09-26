@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { macbookModels } from "../data/index";
+import { macbookModels } from "../Data/index";
 
 export default function Macbook() {
   const [selectedChip, setSelectedChip] = useState(0);

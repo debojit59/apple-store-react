@@ -1,5 +1,5 @@
 import React from "react";
-import { iphoneModels } from "../data/index";
+import { iphoneModels } from "../Data/index";
 
 const IPhone = () => {
   return (
