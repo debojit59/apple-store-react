@@ -44,11 +44,11 @@ export default function Macbook() {
       </div>
 
       <div className="flex flex-col 2xl:p-1 md:items-start items-center">
-        <div className="w-70 h-56  2xl:mb-0 mb-2">
+        <div className="w-70 h-64  2xl:mb-0 mb-2">
           <img
             src={currentColor.img}
             alt={`MacBook with ${currentMb.chip}`}
-            className="2xl:w-60 xl:w-44 w-36 h-full 2xl:mt-0 sm:mt-5 object-contain"
+            className="2xl:w-72 xl:w-54 w-48 h-full 2xl:mt-0 sm:mt-6 object-contain m-auto"
           />
         </div>
 

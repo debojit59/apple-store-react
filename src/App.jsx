@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import Control from "./components/Control";
 import Navbar from "./components/Navbar";
@@ -12,9 +12,23 @@ import Transition from "./components/Transition";
 export default function App() {
   const [frameZoom, SetFrameZoom] = useState(false);
   const [Open, SetOpen] = useState(0);
+  const [isLgScreen, setIsLGScreen] = useState(window.innerWidth >= 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLGScreen(window.innerWidth >= 1024);
+      if (window.innerWidth >= 1024) {
+        SetFrameZoom(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener(`resize`, handleResize);
+  }, []);
 
   function HandleZoom() {
-    SetFrameZoom((frame) => !frame);
+    if (isLgScreen) {
+      SetFrameZoom((frame) => !frame);
+    }
   }
 
   function HandleFolder(index) {

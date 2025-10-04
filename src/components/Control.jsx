@@ -4,7 +4,7 @@ export default function Control({ HandleZoom, frameZoom, HandleReset, Open }) {
   return (
     <div className="absolute top-3 right-3 z-50 pointer-events-auto">
       <button
-        className="text-2xl text-pink-400 cursor-pointer mr-3"
+        className="text-2xl text-pink-400 cursor-pointer mr-3 hidden lg:block"
         onClick={HandleZoom}
       >
         <i className={frameZoom ? "bx bxs-zoom-out" : "bx bxs-zoom-in"}></i>
