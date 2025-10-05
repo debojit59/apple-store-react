@@ -18,7 +18,7 @@ const IPhone = () => {
             <img
               src={iphone.img}
               alt={iphone.name}
-              className="2xl:w-72 lg:w-64 sm:w-48 md:h-64 sm:h-48 object-contain"
+              className="2xl:w-72 lg:w-64 sm:w-36 md:h-64 sm:h-48 object-contain"
             />
             <a
               href="#"

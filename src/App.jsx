@@ -13,6 +13,11 @@ export default function App() {
   const [frameZoom, SetFrameZoom] = useState(false);
   const [Open, SetOpen] = useState(0);
   const [isLgScreen, setIsLGScreen] = useState(window.innerWidth >= 1024);
+  const [isOpenNavbar, setIsOpenNavbar] = useState(false);
+
+  const HandleNavbar = () => {
+    setIsOpenNavbar(!isOpenNavbar);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,10 +51,15 @@ export default function App() {
         <div
           className={`${
             frameZoom ? "min-w-[97vw] min-h-[97vh]" : ""
-          } w-[70vw] h-[85vh] min-w-[70vw] min-h-[85vh] max-w-[90vw] max-h-[90vh] max-w-screen-2xl
+          } w-[70vw] h-[85vh] min-w-[70vw] min-h-[85vh] max-h-[90vh] max-w-screen-2xl
           border border-gray-300 resize rounded-2xl overflow-auto relative transition-all duration-100 flex`}
         >
-          <Navbar HandleFolderIcon={HandleFolder} Open={Open} />
+          <Navbar
+            HandleFolderIcon={HandleFolder}
+            Open={Open}
+            isOpenNavbar={isOpenNavbar}
+            HandleNavbar={HandleNavbar}
+          />
           <Control
             HandleZoom={HandleZoom}
             frameZoom={frameZoom}
